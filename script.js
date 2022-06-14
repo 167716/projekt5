@@ -33,7 +33,8 @@ cw1.addEventListener("click", function () {
 })
 
   cw2.addEventListener("click", function () {
-     fetch('https://jsonplaceholder.typicode.com/posts')
+    answer.innerHTML="Ładowanie"; 
+    fetch('https://jsonplaceholder.typicode.com/posts')
       .then(response => response.json())
       .then(function (dane){
         NowaLinia(dane)
@@ -50,7 +51,12 @@ cw1.addEventListener("click", function () {
   })
 
   cw3.addEventListener("click", function () {
-    //TODO implement it
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => response.json())
+      .then(array => {
+        console.log(array)
+        answer.innerHTML = JSON.stringify(array);
+      })
   })
 
 })();
