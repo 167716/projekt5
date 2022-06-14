@@ -14,12 +14,39 @@
       })
   })
 
-  cw1.addEventListener("click", function () {
-    //TODO implement it
-  })
+cw1.addEventListener("click", function () {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(function (dane){
+        NowaLinia(dane)
+      })
+  function NowaLinia(dane){
+    answer.innerHTML="";
+    for(var i=0;i<dane.length;i++){
+      var div=document.createElement("div");
+      div.innerHTML='UserID: ' + dane[i].userId + '<br></br>' + "Id:"+dane[i].id+'<br></br>'+"Title: "+dane[i].title+'<br></br>'+"Body: "+dane[i].body+'<br></br>';
+       
+      answer.appendChild(div);
+    }
+  }
+  
+})
 
   cw2.addEventListener("click", function () {
-    //TODO implement it
+     fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(function (dane){
+        NowaLinia(dane)
+      })
+  function NowaLinia(dane){
+    answer.innerHTML="";
+    for(var i=0;i<dane.length;i++){
+      var div=document.createElement("div");
+      div.innerHTML='UserID: ' + dane[i].userId + '<br></br>' + "Id:"+dane[i].id+'<br></br>'+"Title: "+dane[i].title+'<br></br>'+"Body: "+dane[i].body+'<br></br>';
+       
+      answer.appendChild(div);
+    }
+  }
   })
 
   cw3.addEventListener("click", function () {
